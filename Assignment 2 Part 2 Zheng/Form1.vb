@@ -42,12 +42,14 @@
     End Sub
 
     Private Sub btnAddService_Click(sender As Object, e As EventArgs) Handles btnAddService.Click
-        ' Checks if anything is selected from the listbox
+        ' Checks if anything is selected from the hairdressers combo box
         If (cboHairdressers.SelectedIndex >= 0) Then
+            ' checks if there are any values in the current box so it can add the hairdresser 
             If (lstPrice.Items.Count = 0) Then
                 lstDisplayedPrice.Items.Add(cboHairdressers.SelectedItem.ToString())
                 lstPrice.Items.Add(decBaseCost.ToString("c"))
             End If
+            ' checks if the added selection already exists in the box
             If (Not lstDisplayedPrice.Items.Contains(lstServices.SelectedItem)) Then
                 lstDisplayedPrice.Items.Add(lstServices.SelectedItem)
                 lstPrice.Items.Add(decServiceArray(lstServices.SelectedIndex).ToString("c"))
@@ -56,6 +58,28 @@
                 MessageBox.Show("you may only add one service once!")
             End If
         End If
-
     End Sub
+
+    Private Sub btnCalculateTotal_Click(sender As Object, e As EventArgs) Handles btnCalculateTotal.Click
+        Dim sum As Decimal = 0
+        For i = 0 To lstPrice.Items.Count - 1
+            sum += CDbl(lstPrice.Items.Item(i))
+        Next
+        lblTotaloutput.Text = sum.ToString("c")
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        lstServices.SelectedIndex = -1
+
+        lstPrice.Items.Clear()
+        lstDisplayedPrice.Items.Clear()
+
+        btnAddService.Enabled = False
+        btnCalculateTotal.Enabled = False
+
+        cboHairdressers.Enabled = True
+
+        lblTotaloutput.Text = ""
+    End Sub
+
 End Class

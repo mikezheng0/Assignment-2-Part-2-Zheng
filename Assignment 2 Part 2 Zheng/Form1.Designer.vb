@@ -34,6 +34,8 @@ Partial Class Form1
         Me.btnCalculateTotal = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.lblTotaloutput = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cboHairdressers
@@ -148,11 +150,30 @@ Partial Class Form1
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Location = New System.Drawing.Point(45, 309)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(44, 17)
+        Me.lblTotal.TabIndex = 12
+        Me.lblTotal.Text = "Total:"
+        '
+        'lblTotaloutput
+        '
+        Me.lblTotaloutput.AutoSize = True
+        Me.lblTotaloutput.Location = New System.Drawing.Point(48, 330)
+        Me.lblTotaloutput.Name = "lblTotaloutput"
+        Me.lblTotaloutput.Size = New System.Drawing.Size(0, 17)
+        Me.lblTotaloutput.TabIndex = 13
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1012, 546)
+        Me.Controls.Add(Me.lblTotaloutput)
+        Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnCalculateTotal)
@@ -183,5 +204,7 @@ Partial Class Form1
     Friend WithEvents btnCalculateTotal As System.Windows.Forms.Button
     Friend WithEvents btnReset As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
+    Friend WithEvents lblTotal As System.Windows.Forms.Label
+    Friend WithEvents lblTotaloutput As System.Windows.Forms.Label
 
 End Class
