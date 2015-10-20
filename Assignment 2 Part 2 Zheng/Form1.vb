@@ -1,4 +1,10 @@
-﻿Public Class frmPerfectHairSalon
+﻿' Mike Zheng
+' Assignment 2 part 2 - this lab calculates the final price after adding services used for a companyss
+' I Mike Zheng, 000458657 certify that this material is my original work. 
+' No other person's work has been used without due acknowledgement. I 
+' have not made my work available to anyone else.
+
+Public Class frmPerfectHairSalon
     ' Constant values for different hair cutter base values
     Const decJSAMLEY As Decimal = 30D
     Const decPJOHNSON As Decimal = 45D
